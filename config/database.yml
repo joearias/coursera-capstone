@@ -3,12 +3,14 @@ default: &default
   encoding: unicode
   pool: 5
 
-development:
-  <<: *default
-  database: coursera-capstone_development
   username: <%= ENV['POSTGRES_USER'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: <%= ENV['POSTGRES_HOST'] %>
+
+
+development:
+  <<: *default
+  database: coursera-capstone_development
 
 test:
   <<: *default
