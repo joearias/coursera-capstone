@@ -15,10 +15,9 @@ RSpec.describe "ApiDevelopments", type: :request do
     end
     it "exposes RDBMS-backed API resource" do
       object=Foo.create(:name=>"test")
-      expect(foo_path).to eq("/api/foos")
-
+      expect(foos_path).to eq("/api/foos")
       get foo_path(object.id)
-      expect(response).to have_http_status(ok)
+      expect(response).to have_http_status(:ok)
       expect(parsed_body["name"]).to eq("test")
     end
   end
@@ -34,10 +33,10 @@ RSpec.describe "ApiDevelopments", type: :request do
     end
     it "exposes MongoDB-backed API resource" do
       object=Bar.create(:name=>"test")
-      expect(bar_path).to eq("/api/bars")
+      expect(bars_path).to eq("/api/bars")
 
       get bar_path(object.id)
-      expect(response).to have_http_status(ok)
+      expect(response).to have_http_status(:ok)
       expect(parsed_body["name"]).to eq("test")
 
     end
