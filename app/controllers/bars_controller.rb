@@ -5,8 +5,8 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
     @bars = Bar.all
-
-    render json: @bars
+#byebug
+    #render json: @bars
   end
 
   # GET /bars/1
