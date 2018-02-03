@@ -14,4 +14,4 @@ group :development do
 end
 
 gem 'pg', ['>=0.19', '<0.21']
-
+gem 'mongoid', '~>5.1', '>=5.1.5'
