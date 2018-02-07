@@ -11,6 +11,7 @@ group :development do
   gem 'tzinfo-data', :platforms=>[:mingw, :mswin, :x64_mingw, :jruby]
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5.0', '>=3.5.2'
+  gem 'httparty', '~>0.14', '>=0.14.0'
 end
 
 gem 'pg', ['>=0.19', '<0.21']
