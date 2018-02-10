@@ -5,7 +5,6 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
     @bars = Bar.all
-#byebug
     #render json: @bars
   end
 
@@ -13,7 +12,7 @@ class BarsController < ApplicationController
   # GET /bars/1.json
   def show
     #render json: @bar
-    binding.pry
+    #binding.pry
     #byebug
   end
 

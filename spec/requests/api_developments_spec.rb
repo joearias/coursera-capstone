@@ -8,6 +8,9 @@ RSpec.describe "ApiDevelopments", type: :request do
   describe "RDMS-backed" do
     before(:each) {Foo.delete_all}
     after(:each) {Foo.delete_all}
+#binding.pry
+    before(:each) {City.delete_all}
+    after(:each) {City.delete_all}
 
     it "create RDBMS-backed model" do
       object=Foo.create(:name=>"test")
@@ -19,6 +22,15 @@ RSpec.describe "ApiDevelopments", type: :request do
       get foo_path(object.id)
       expect(response).to have_http_status(:ok)
       expect(parsed_body["name"]).to eq("test")
+
+#binding.pry
+      object=City.create(:name=>"Los Angeles")
+      expect(cities_path).to eq("/api/cities")
+      get city_path(object.id)
+      expect(response).to have_http_status(:ok)
+      expect(parsed_body["name"]).to eq("Los Angeles")
+
+
     end
   end
 
