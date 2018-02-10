@@ -32,7 +32,7 @@ class CitiesController < ApplicationController
   # PATCH/PUT /cities/1.json
   def update
     # if @city.update(city_params)
-    #   head :no_content
+     head :no_content
     # else
     #   render json: @city.errors, status: :unprocessable_entity
     # end
