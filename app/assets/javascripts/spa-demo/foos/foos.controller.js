@@ -5,7 +5,7 @@
         .module('spa-demo.foos')
         .controller('spa-demo.foos.FoosController', FoosController);
 
-    FoosController.$inject = ['spa-demo.Foo'];
+    FoosController.$inject = ['spa-demo.foos.Foo'];
     function FoosController(Foo) {
         var vm = this;
         vm.foos;
