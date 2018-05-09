@@ -11,3 +11,4 @@
 
 //= require spa-demo/foos/foos.module
 //= require spa-demo/foos/foos.service
+//= require spa-demo/foos/foos.controller
