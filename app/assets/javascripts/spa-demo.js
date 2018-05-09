@@ -9,4 +9,5 @@
 //= require spa-demo/app.router
 //= require spa-demo/app.constant
 
-//= require spa-demo/foos/foos.module.js
+//= require spa-demo/foos/foos.module
+//= require spa-demo/foos/foos.service
