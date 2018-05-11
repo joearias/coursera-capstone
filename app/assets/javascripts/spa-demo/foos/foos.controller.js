@@ -10,21 +10,36 @@
         var vm = this;
         vm.foos;
         vm.foo;
+        vm.edit = edit;
+        vm.create = create;
+        vm.update = update;
+        vm.remove = remove;
 
         activate();
         return;
         ////////////////
-        function activate() {  }
+        function activate() {
+            newFoo();
+            vm.foos = Foo.query();
+        }
 
         function newFoo(){
-            vm.Foo = new Foo();
+            vm.foo = new Foo();
         }
         function handleError(response){
             console.log(response);
         }
 
         function edit(object, index){}
-        function create(){}
+        function create(){
+            vm.foo.$save()
+            .then(function(response){
+                console.log(response);
+                vm.foos.push(vm.foo);
+                newFoo();
+            })
+            .catch(handleError);
+        }
         function update(){}
         function remove(){}
         function removeElement(elements, element){}
