@@ -30,7 +30,10 @@
             console.log(response);
         }
 
-        function edit(object, index){}
+        function edit(object){
+            console.log("selected", object);
+            vm.foo = object;
+        }
         function create(){
             vm.foo.$save()
             .then(function(response){
@@ -40,9 +43,35 @@
             })
             .catch(handleError);
         }
-        function update(){}
-        function remove(){}
-        function removeElement(elements, element){}
+        function update(){
+            vm.foo.$update()
+            .then(function(response){
+                console.log(response)
+            })
+            .catch(handleError);
+        }
+
+        function remove(){
+            vm.foo.$delete()
+            .then(function(response){
+                //remove element from local array
+                removeElement(vm.foos, vm.foo);
+
+                //reload records
+                //vm.foos = Foo.query();
+                //replace area with prototype instance
+                newFoo();
+            })
+        }
+        function removeElement(elements, element){
+            for (var i=0; i<elements.length; i++)
+            {
+                if(elements[i].id == element.id){
+                    elements.splice(i, 1);
+                    break;
+                }
+            }
+        }
 
     }
 })();
