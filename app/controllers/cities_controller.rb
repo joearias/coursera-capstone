@@ -31,17 +31,17 @@ class CitiesController < ApplicationController
   # PATCH/PUT /cities/1
   # PATCH/PUT /cities/1.json
   def update
-    # if @city.update(city_params)
-     head :no_content
-    # else
-    #   render json: @city.errors, status: :unprocessable_entity
-    # end
+     if @city.update(city_params)
+       head :no_content
+     else
+       render json: @city.errors, status: :unprocessable_entity
+     end
   end
 
   # DELETE /cities/1
   # DELETE /cities/1.json
   def destroy
-    #@city.destroy
+    @city.destroy
 
     head :no_content
   end
